@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Adamfopa Psychiatry</title>
   <style>
-   /* Ensure images scale on small devices */
-   img {
+  /* Ensure images scale on small devices */
+  img {
     max-width: 100%;
     height: auto;
   }
@@ -19,7 +19,6 @@
   /* Make layout elements stack on small screens */
   @media (max-width: 768px) {
     .site-header,
-    .top-bar,
     .hero-bold,
     .form-section,
     .team-section,
@@ -34,6 +33,9 @@
       display: flex;
       flex-direction: column;
       align-items: flex-start;
+      z-index: 2;
+      background-color: white;
+      width: 100%;
     }
 
     .logo {
@@ -44,11 +46,14 @@
     .dropdown-btn {
       width: 100%;
       text-align: left;
+      z-index: 2;
     }
 
     .dropdown-menu {
       position: static;
       width: 100%;
+      background-color: white;
+      z-index: 2;
     }
 
     .hero-buttons a {
@@ -71,15 +76,18 @@
       display: none !important;
     }
 
-    .hero-image-crop {
-      height: 280px;
+    section.hero-image-crop {
+      display: block;
+      height: auto;
       overflow: hidden;
     }
 
-    .hero-image-crop img {
-      width: 100%;
+    section.hero-image-crop img {
+      width: 100vw;
+      height: 300px;
       object-fit: cover;
-      object-position: center;
+      object-position: top center;
+      display: block;
     }
   }
 
