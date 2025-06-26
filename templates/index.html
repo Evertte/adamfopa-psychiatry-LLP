@@ -2,8 +2,72 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Adamfopa Psychiatry</title>
   <style>
+  /* Ensure images scale on small devices */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Responsive typography */
+  body, p, h1, h2, h3, h4, h5, h6 {
+    word-wrap: break-word;
+  }
+
+  /* Make layout elements stack on small screens */
+  @media (max-width: 768px) {
+    .site-header,
+    .top-bar,
+    .hero-bold,
+    .form-section,
+    .team-section,
+    .card-container,
+    .footer-container {
+      flex-direction: column;
+      padding: 20px 15px !important;
+      align-items: center;
+    }
+
+    nav {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .logo {
+      font-size: 26px !important;
+      text-align: center;
+    }
+
+    .dropdown-btn {
+      width: 100%;
+      text-align: left;
+    }
+
+    .dropdown-menu {
+      position: static;
+      width: 100%;
+    }
+
+    .hero-buttons a {
+      padding: 15px 25px;
+      font-size: 16px;
+    }
+
+    .form-right,
+    .form-left,
+    .team-left,
+    .team-right {
+      max-width: 100% !important;
+    }
+
+    .condition-card {
+      max-width: 90% !important;
+    }
+  }
+
     body {
       font-family: Arial, sans-serif;
       margin: 0;
@@ -779,7 +843,7 @@
         <!-- Bipolar -->
         <div class="condition-card">
           <h3>Trauma</h3>
-          <img src='images/trauma.png' alt="PTSD">
+          <img src='images/Trauma.png' alt="PTSD">
           <p>
             Trauma can cause feelings of sadness, isolation, and hopelessness. It can be effectively managed with medication and therapy.
           </p>
