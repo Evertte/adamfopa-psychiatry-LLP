@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Adamfopa Psychiatry</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .top-bar {
+      background-color: orange;
+      color: white;
+      padding: 10px 15px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 14px;
+    }
+
+    .top-bar a {
+      color: white;
+      margin-right: 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .top-bar a.pay {
+      background-color: #d35400;
+      padding: 5px 10px;
+      border-radius: 3px;
+    }
+
+    .site-header {
+      background: #fff;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .logo {
+      font-weight: bold;
+      color: #660066;
+      font-size: 30px;
+      text-shadow: 0 0 1px #000;
+      -webkit-text-stroke: 1px #000;
+    }
+
+    .logo span {
+      color: #00aaff;
+      font-weight: bold;
+    }
+
+    nav a {
+      margin: 0 10px;
+      color: #333;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    nav a.active {
+      border-bottom: 2px solid orange;
+      padding-bottom: 2px;
+    }
+
+    .hero-bold {
+      background: linear-gradient(to right, #1B2A44, #1B2A44);
+      color: white;
+      display: flex;
+      flex-wrap: wrap;
+      padding: 60px 40px;
+      height: 0px;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+    }
+
+    .hero-left {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .headline-box {
+      background: white;
+      color: #222;
+      display: inline-block;
+      padding: 20px 30px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+
+    .headline-box h1 {
+      font-size: 32px;
+      margin: 0;
+      font-weight: 800;
+    }
+
+    .subtext {
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+
+    .support-line {
+      background: #ffffff10;
+      padding: 12px 15px;
+      border-left: 4px solid #f39c12;
+      margin-bottom: 30px;
+      font-size: 15px;
+      color: #e0e0e0;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .btn-orange {
+      padding: 27px 40px;
+      font-size: 18px;
+      font-weight: bold;
+      border-radius: 10px;
+      text-decoration: none;
+      transition: background-color 0.1s ease;
+      background-color: white;
+      color: navy;
+      border: none;
+    }
+
+    .btn-orange:hover {
+      background-color: #ff9900;
+      color: white;
+    }
+
+    .hero-right {
+      flex: 1;
+      min-width: 280px;
+      text-align: center;
+    }
+
+    .hero-right img {
+      width: 100%;
+      max-width: 520px;
+      border-radius: 12px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+      filter: drop-shadow(0 0 10px rgba(0,0,0,0.2));
+    }
+
+    .content {
+      padding: 30px 20px;
+      font-size: 18px;
+    }
+
+    .content h2 {
+      color: #222;
+      margin-bottom: 10px;
+      border-left: 4px solid orange;
+      padding-left: 10px;
+    }
+
+    .content p {
+      line-height: 1.6;
+    }
+
+    .form-section {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      background: #fefefe;
+      padding: 50px 40px;
+      gap: 30px;
+    }
+
+    .form-left {
+      flex: 1;
+      min-width: 280px;
+      max-width: 550px;
+    }
+
+    .form-left h2 {
+      font-size: 26px;
+      margin-bottom: 20px;
+      color: #222;
+      border-left: 4px solid orange;
+      padding-left: 10px;
+    }
+
+    .form-left p {
+      font-size: 18px;
+      line-height: 1.6;
+      margin-bottom: 15px;
+      color: #333;
+    }
+
+    .form-right {
+      flex: 1;
+      min-width: 280px;
+      background: #e7f1f8;
+      padding: 30px 25px;
+      border-radius: 8px;
+    }
+
+    .form-right .form-call {
+      font-weight: bold;
+      color: #223f66;
+      margin-bottom: 20px;
+    }
+
+    .form-right a {
+      color: #1976d2;
+      text-decoration: none;
+    }
+
+    form label {
+      display: block;
+      font-weight: 500;
+      margin-top: 15px;
+      margin-bottom: 5px;
+      color: #333;
+    }
+
+    form input[type="text"],
+    form input[type="email"],
+    form input[type="tel"] {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #bbb;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+
+    .checkbox-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-top: 8px;
+    }
+
+    .submit-btn {
+      margin-top: 20px;
+      background: #1976d2;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 6px;
+      font-weight: bold;
+      font-size: 15px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .submit-btn:hover {
+      background: #145a9e;
+    }
+
+    .team-section {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      align-items: flex-start;
+      padding: 60px 40px;
+      background: lab(90.59% 0 -0.01 / 0.771);
+    }
+
+    .team-left {
+      flex: 1;
+      min-width: 300px;
+      text-align: center;
+    }
+
+    .team-left img {
+      width: 100%;
+      max-width: 400px;
+      border-radius: 6px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+      margin-bottom: 20px;
+    }
+
+    .team-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .btn-blue {
+      display: inline-block;
+      background-color: #145a9e;
+      color: white;
+      font-weight: bold;
+      padding: 12px 20px;
+      text-decoration: none;
+      border-radius: 4px;
+      width: 200px;
+      text-align: center;
+      transition: background 0.3s;
+    }
+    .btn-blueT {
+      display: inline-block;
+      background-color: #145a9e;
+      color: white;
+      font-weight: bold;
+      padding: 12px 20px;
+      text-decoration: none;
+      border-radius: 4px;
+      width: 160px;
+      text-align: center;
+      transition: background 0.3s;
+    }
+
+    .btn-blue:hover {
+      background-color: #163d7c;
+    }
+
+    .team-right {
+      flex: 1;
+      min-width: 280px;
+    }
+
+    .team-right h2 {
+      font-size: 26px;
+      margin-bottom: 12px;
+      border-left: 4px solid orange;
+      padding-left: 10px;
+      color: #222;
+    }
+
+    .team-right .lead {
+      font-weight: 600;
+      margin-bottom: 15px;
+      color: #444;
+    }
+
+    .team-right p {
+      font-size: 18px;
+      color: #444;
+      line-height: 1.6;
+      margin-bottom: 12px;
+    }
+
+    .conditions-section {
+  padding: 50px 30px;
+  background: hsla(0, 0%, 99%, 0.741);
+}
+
+.conditions-section h2 {
+  font-size: 28px;
+  color: #222;
+  border-left: 5px solid orange;
+  padding-left: 10px;
+  margin-bottom: 15px;
+}
+
+.conditions-section .intro {
+  font-size: 16px;
+  margin-bottom: 15px;
+  color: #444;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 10px;
+  margin-top: 30px;
+  width: 95%;
+  margin: 0 auto;
+}
+
+.condition-card {
+  background: #ffffff81;
+  font-size: 22px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+  flex: 1;
+  min-width: 240px;
+  max-width: 300px;
+  padding: 20px;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.condition-card h3 {
+  background:#145a9e;
+  color: white;
+  padding: 10px;
+  font-size: 18px;
+  border-radius: 6px 6px 0 0;
+  margin-top: -20px;
+  width: 60%;
+  margin: 0 auto;}
+
+.condition-card img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  margin: 15px 0;
+  border-radius: 6px;
+}
+
+.condition-card p {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.card-link {
+  color: #2c3e91;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.card-link:hover {
+  text-decoration: underline;
+}
+
+.book-appointment-cta {
+  text-align: center;
+  margin: 40px 0;
+}
+
+.book-now-btn {
+  background-color: #34C759; /* a bright, energetic green */
+  color: #fff;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.book-now-btn:hover {
+  background-color: #2ecc71; /* a slightly darker green on hover */
+}
+
+.book-now-btn i {
+  margin-left: 10px;
+  font-size: 20px;
+}
+.site-footer {
+  background-color: #1B2A44;
+  padding: 40px 20px 20px;
+  font-family: Arial, sans-serif;
+  color: #f1f1f1;
+  border-top: 1px solid #333;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.footer-column {
+  flex: 1 1 250px;
+  min-width: 250px;
+}
+
+.footer-column h4 {
+  font-size: 18px;
+  margin-bottom: 15px;
+  color: #ffffff;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 10px;
+}
+
+.footer-column a {
+  text-decoration: none;
+  color: #7ab4ff;
+}
+
+.footer-column a:hover {
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 30px;
+  padding-top: 20px;
+  font-size: 14px;
+  color: #bbb;
+  border-top: 1px solid #333;
+}
+
+
+.copyright {
+  text-align: center;
+  font-size: 14px;
+  margin-top: 20px;
+}
+
+.dropdown-btn {
+  background-color: #fff;
+  color: #333;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  padding: 10px;
+  border: 1px solid #ddd;
+  width: 200px;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.dropdown-menu li {
+  margin-bottom: 10px;
+}
+
+.dropdown-menu a {
+  color: #333;
+  text-decoration: none;
+}
+
+.dropdown-btn:hover + .dropdown-menu {
+  display: block;
+}
+
+.dropdown-menu:hover {
+  display: block;
+}
+  </style>
+</head>
+<body>
+
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <a href="#">TELEHEALTH</a>
+    <a href="#">REQUEST EVALUATION</a>
+    <a href="#">EDMUND ADEM, PMHNP-BC</a>
+    <a href="#">AREA OF SERVICE</a>
+    <a href="#">BOOK AN APPOINTMENT</a>
+    <a href="#" class="pay">Make a Payment</a>
+  </div>
+
+  <!-- Navigation -->
+  <header class="site-header">
+    <div class="logo" style="font-size: 40px">ADAMFOPA<br> <span>PSYCHIATRY, LLP</span></div>
+    <nav>
+
+      <button class="dropdown-btn">Conditions & Treatments</button>
+      <ul class="dropdown-menu">
+        <li><a href="#depression">Depression</a></li>
+        <li><a href="#adhd">ADHD</a></li>
+        <li><a href="#anxiety">Anxiety</a></li>
+        <li><a href="#bipolar-disorder">Bipolar Disorder</a></li>
+        <li><a href="#borderline-personality">Borderline Personality (BDP)</a></li>
+        <li><a href="#dissociative-disorder">Dissociative Disorder</a></li>
+        <li><a href="#psychosis">Psychosis</a></li>
+        <li><a href="#insomnia">Insomnia</a></li>
+        <li><a href="#suicidal-ideation">Suicidal Ideation</a></li>
+        <li><a href="#trauma-and-ptsd">Trauma and PTSD</a></li>
+        <li><a href="#mood-disorder">Mood Disorder</a></li>
+        <li><a href="#ocd">OCD</a></li>
+      </ul>
+      <button class="dropdown-btn">Patients</button>
+      <ul class="dropdown-menu">
+        <li><a href="#health-insurance">Health Insurance</a></li>
+        <li><a href="#payment">Make a Payment</a></li>
+        <li><a href="#appointment">Appointment</a></li>
+      </ul>
+      <button class="dropdown-btn">Contact Us</button>
+      <ul class="dropdown-menu">
+        <li><a href="#phone">(978) 684-3935</a></li>
+        <li><a href="#email">adamfopapsychiatry@gmail.com</a></li>
+      </ul>
+    </nav>
+  </div>
+  <script>
+    document.querySelectorAll('.dropdown-btn').forEach(function(btn) {
+      btn.addEventListener('click', function(e) {
+        const allMenus = document.querySelectorAll('.dropdown-menu');
+        allMenus.forEach(menu => menu.classList.remove('show'));
+        const nextMenu = this.nextElementSibling;
+        if (nextMenu && nextMenu.classList.contains('dropdown-menu')) {
+          nextMenu.classList.toggle('show');
+        }
+        e.stopPropagation();
+      });
+    });
+    document.addEventListener('click', () => {
+      document.querySelectorAll('.dropdown-menu').forEach(menu => menu.classList.remove('show'));
+    });
+  </script>
+
+  </header>
+
+  <!-- Hero Section -->
+  <section>
+    <img src='images/design3.jpg' alt="Design Image" style="width: 100%; height: 580px; margin: 0 auto; display: block;">
+  </section>
+  <section class="hero-bold">
+      <div class="hero-buttons">
+        <a href="#" class="btn-orange">BOOK AN APPOINTMENT</a>
+        <a href="#" class="btn-orange">CALL US! 978–648–3935</a>
+      </div>
+  </section>
+
+
+  <!-- Main Content -->
+  <main class="content">
+    <h2>New Patients</h2>
+    <p>
+      Welcome to Adamfopa Psychiatry! Following your phone evaluation, you will be provided with a password and asked to complete the following forms prior to your initial visit.
+    </p>
+
+    <!-- Evaluation Form -->
+    <section class="form-section">
+      <div class="form-left">
+        <h2>Start Feeling Better –<br> Request a Confidential Evaluation</h2>
+        <p><strong>Expert Private Psychiatric Care —  Telehealth Online Across Worcester County</strong></p>
+        <p>If you’re struggling with ADHD, anxiety, depression, or social anxiety, our board-certified psychiatrists are here to help.</p>
+        <p>We provide discreet, personalized psychiatric evaluations with flexible telehealth appointments available throughout Massachusetts. Start with a confidential consultation today.</p>
+      </div>
+      <div class="form-right">
+        <p class="form-call">Please complete the form or call <a href="tel:9782520873">(978) 684-3935</a> to begin your confidential evaluation.</p>
+        <form>
+          <label>First and Last Name *</label>
+          <input type="text" required>
+          <label>Email *</label>
+          <input type="email" required>
+          <label>Phone *</label>
+          <input type="tel" required>
+          <label>Preferred Office(s) *</label>
+          <div class="checkbox-group">
+            <label><input type="checkbox"> Leominster</label>
+            <label><input type="checkbox"> Clinton</label>
+            <label><input type="checkbox"> Telehealth (MA & NH)</label>
+          </div>
+          <label>Zip Code *</label>
+          <input type="text" required>
+          <label>SMS Consent</label>
+          <div class="checkbox-group">
+            <label><input type="checkbox"> By checking this box, you consent to receive messages...</label>
+          </div>
+          <label><input type="checkbox" required> I agree to the HIPAA FORMS Service Privacy Statement</label>
+          <button type="submit" class="submit-btn">🔒 Submit</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team-section">
+      <div class="team-left">
+        <img src='images/real.jpeg' alt="Team photo">
+        <div class="team-buttons">
+          <a href="#" class="btn-blue">OUR PSYCHIATRISTS</a>
+          <a href="#" class="btn-blueT">OUR THERAPISTS</a>
+        </div>
+      </div>
+      <div class="team-right">
+        <h2>Adamfopa Psychiatry Team</h2>
+        <p class="lead">
+          <strong>Our psychiatrist offers a comprehensive and confidential approach to private, outpatient psychiatric care.</strong>
+        </p>
+        <p>Adamfopa Psychiatry focuses on the well-being of our clients through the entirety of your care. We serve Massachusetts (Worcester County) and New Hampshire through telehealth.</p>
+        <p>Our team creates and cultivates spaces of safety and sensitivity where we strive to understand your experiences with the utmost discretion. Through the professionalism and years of experience, we recognize how the unique background of each patient requires tailored support.</p>
+      </div>
+    </section>
+
+    <section class="conditions-section">
+      <h2>Mental Health Conditions and Treatments</h2>
+      <p class="intro">
+        Taking the first step can seem difficult, but our caring and experienced team is ready to assist you getting the help you're looking for so that you can improve the quality of your life.
+      </p>
+      <p class="intro">
+        Our psychiatrists and therapists diagnose and treat conditions including but not limited to ADD and ADHD, anxiety, bipolar disorder, depression, obsessive-compulsive disorder, panic disorder, PTSD, and social phobia.
+      </p>
+    
+      <div class="card-container">
+        <!-- ADD/ADHD -->
+        <div class="condition-card">
+          <h3>ADD / ADHD</h3>
+          <img src='images/ADHD.png' alt="ADD / ADHD">
+          <p>
+            Put an end to your inability to focus, complete tasks, or frequent restlessness. ADD and ADHD are treatable conditions with monitored care.
+          </p>
+          <a href="#" class="card-link">ADD / ADHD SYMPTOMS AND TREATMENT</a>
+        </div>
+    
+        <!-- Anxiety -->
+        <div class="condition-card">
+          <h3>Anxiety</h3>
+          <img src='images/Anxiety.png' alt="Anxiety">
+          <p>
+            Anxiety can interfere with work, relationships, and daily life. If symptoms persist, Novum Psychiatry can help you manage and regain control.
+          </p>
+          <a href="#" class="card-link">ANXIETY SYMPTOMS AND TREATMENT</a>
+        </div>
+    
+        <!-- Bipolar -->
+        <div class="condition-card">
+          <h3>Bipolar Disorder</h3>
+          <img src='images/bipolar.png' alt="Bipolar Disorder">
+          <p>
+            Bipolar disorder causes shifts in mood and energy. It can be effectively managed with medication and therapy.
+          </p>
+          <a href="#" class="card-link">BIPOLAR DISORDER SYMPTOMS AND TREATMENT</a>
+        </div>
+      </div>
+    
+      <div class="card-container">
+        <!-- Depression -->
+        <div class="condition-card">
+          <h3>Depression</h3>
+          <img src='images/depression.png' alt="Depression">
+          <p style = "font-size: 18px"> 
+            Depression can cause feelings of sadness, isolation, and hopelessness. It can be effectively managed with medication and therapy.
+          </p>
+          <a href="#" class="card-link">DEPRESSION SYMPTOMS AND TREATMENT</a>
+        </div>
+  
+        <!-- OCD -->
+        <div class="condition-card">
+          <h3>OCD</h3>
+          <img src='images/OCD.png' alt="OCD">
+          <p>
+            Obsessive-compulsive disorder is a mental disorder that causes obsessive thoughts and behaviors. It can be effectively managed with medication and therapy.
+          </p>
+          <a href="#" class="card-link">OCD SYMPTOMS AND TREATMENT</a>
+        </div>
+    
+        <!-- PTSD -->
+        <div class="condition-card">
+          <h3>PTSD</h3>
+          <img src='images/PTSD.png' alt="PTSD">
+          <p>
+            Post-traumatic stress disorder is a mental disorder that can occur after experiencing a traumatic experience. It can be effectively managed with medication and therapy.
+          </p>
+          <a href="#" class="card-link">PTSD SYMPTOMS AND TREATMENT</a>
+        </div>
+      </div>
+    
+      <div class="card-container">
+        <!-- Panic Disorder -->
+        <div class="condition-card">
+          <h3>Panic Disorder</h3>
+          <img src='images/panic.png' alt="Panic Disorder">
+          <p>
+            Panic disorder is a mental disorder that causes excessive anxiety and fear. It can be effectively managed with medication and therapy.
+          </p>
+          <a href="#" class="card-link">PANIC DISORDER SYMPTOMS AND TREATMENT</a>
+        </div> 
+    
+        <!-- Social Phobia -->
+        <div class="condition-card">
+          <h3>Social Phobia</h3>
+          <img src='images/social.png' alt="Social Phobia">
+          <p>
+            Social phobia is a mental disorder that causes fear and avoidance of social situations. It can be effectively managed with medication and therapy.
+          </p>
+          <a href="#" class="card-link">SOCIAL PHOBIA SYMPTOMS AND TREATMENT</a>
+        </div>
+
+        <!-- Bipolar -->
+        <div class="condition-card">
+          <h3>Trauma</h3>
+          <img src='images/trauma.png' alt="PTSD">
+          <p>
+            Trauma can cause feelings of sadness, isolation, and hopelessness. It can be effectively managed with medication and therapy.
+          </p>
+          <a href="#" class="card-link">TRAUMA SYMPTOMS AND TREATMENT</a>
+        </div>
+      </div>
+
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-column about">
+        <h4>About Us</h4>
+        <p>
+          Adamfopa Psychiatry is a private outpatient psychiatric practice
+          dedicated to providing comprehensive and compassionate care to
+          individuals and families.
+        </p>
+      </div>
+  
+      <div class="footer-column links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Conditions + Treatments</a></li>
+          <li><a href="#">Providers</a></li>
+          <li><a href="#">Patients</a></li>
+          <li><a href="#">Articles + Resources</a></li>
+        </ul>
+      </div>
+  
+      <div class="footer-column contact">
+        <h4>Contact Us</h4>
+        <p>Phone: 978-648-3935</p>
+        <p>
+          Email:
+          <a href="mailto:info@adamfopapsychiatry.com">
+            adamfopapsychiatry@gmail.com
+          </a>
+        </p>
+        <p>Address: 47 Bufton Farm Rd, Clinton, MA 01925</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Adamfopa Psychiatry. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
