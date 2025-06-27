@@ -16,81 +16,140 @@
     word-wrap: break-word;
   }
 
+
+
+.hamburger {
+  display: none;
+}
+
+.mobile-top-bar-pills {
+  display: none;
+}
+
   /* Make layout elements stack on small screens */
   @media (max-width: 768px) {
-    .site-header,
-    .hero-bold,
-    .form-section,
-    .team-section,
-    .card-container,
-    .footer-container {
-      flex-direction: column;
-      padding: 20px 15px !important;
-      align-items: center;
-    }
-
-    nav {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      z-index: 2;
-      background-color: white;
-      width: 100%;
-    }
-
-    .logo {
-      font-size: 26px !important;
-      text-align: center;
-    }
-
-    .dropdown-btn {
-      width: 100%;
-      text-align: left;
-      z-index: 2;
-    }
-
-    .dropdown-menu {
-      position: static;
-      width: 100%;
-      background-color: white;
-      z-index: 2;
-    }
-
-    .hero-buttons a {
-      padding: 15px 25px;
-      font-size: 16px;
-    }
-
-    .form-right,
-    .form-left,
-    .team-left,
-    .team-right {
-      max-width: 100% !important;
-    }
-
-    .condition-card {
-      max-width: 90% !important;
-    }
-
-    .top-bar {
-      display: none !important;
-    }
-
-    section.hero-image-crop {
-      display: block;
-      height: auto;
-      overflow: hidden;
-    }
-
-    section.hero-image-crop img {
-      width: 100%;
-      height: auto;
-      object-fit: contain;
-      object-position: center;
-      display: block;
-    }
+  .site-header,
+  .hero-bold,
+  .form-section,
+  .team-section,
+  .card-container,
+  .footer-container {
+    flex-direction: column;
+    padding: 20px 15px !important;
+    align-items: center;
   }
 
+  .mobile-top-bar-pills {
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 10px;
+    background-color: #fff8f0;
+    display: flex;
+    gap: 10px;
+    justify-content: flex-start;
+    scroll-behavior: smooth;
+  }
+
+  .mobile-top-bar-pills::-webkit-scrollbar {
+    height: 4px;
+  }
+
+  .mobile-top-bar-pills::-webkit-scrollbar-thumb {
+    background: orange;
+    border-radius: 10px;
+  }
+
+  .mobile-top-bar-pills a {
+    display: inline-block;
+    background: orange;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 50px;
+    font-size: 14px;
+    white-space: nowrap;
+    transition: all 0.3s ease;
+  }
+
+  .mobile-top-bar-pills a:hover {
+    background: white;
+    color: orange;
+    border: 1px solid orange;
+  }
+
+  .mobile-top-bar-pills a span {
+    margin-right: 5px;
+  }
+
+
+
+
+
+  nav {
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    background-color: #fff;
+    padding: 15px;
+    gap: 10px;
+    transition: all 0.3s ease;
+
+  }
+
+  nav.show {
+    display: flex;
+  }
+
+  .hamburger {
+    display: block;
+    font-size: 28px;
+    background: none;
+    border: none;
+    color: #333;
+    padding: 10px;
+    margin-left: auto;
+    cursor: pointer;
+  }
+
+  .dropdown {
+    width: 100%;
+  }
+
+  .dropdown-btn {
+    width: 100%;
+    text-align: left;
+  }
+
+  .dropdown-menu {
+    position: static;
+    width: 100%;
+    max-height: none;
+    box-shadow: none;
+    border: none;
+    display: none;
+    padding-left: 0;
+  }
+
+  .dropdown:hover .dropdown-menu {
+    display: block;
+  }
+
+  .top-bar {
+    display: none !important;
+  }
+
+  section.hero-image-crop img {
+    width: 100vw;
+    height: 300px;
+    object-fit: cover;
+    object-position: top center;
+    display: block;
+  }
+}
+
+  /* Body and for the general layout */
     body {
       font-family: Arial, sans-serif;
       margin: 0;
@@ -120,6 +179,14 @@
       padding: 5px 10px;
       border-radius: 3px;
     }
+    .top-bar a:hover {
+  background-color: white;
+  color: orange;
+  padding: 5px 10px;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
 
     .site-header {
       background: #fff;
@@ -161,7 +228,7 @@
       display: flex;
       flex-wrap: wrap;
       padding: 60px 40px;
-      height: 50px;
+      height: 0px;
       align-items: center;
       justify-content: space-between;
       gap: 40px;
@@ -215,15 +282,34 @@
       border-radius: 10px;
       text-decoration: none;
       transition: background-color 0.1s ease;
-      background-color: white;
-      color: navy;
+      background-color: orange;
+      color: white;
       border: none;
     }
 
     .btn-orange:hover {
-      background-color: #ff9900;
-      color: white;
+      background-color: white;
+      color: orange;
     }
+
+    /* for white */
+    .btn-white {
+  padding: 27px 40px;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  background-color: white;
+  color: orange;
+  border: none;
+}
+
+.btn-white:hover {
+  background-color: orange;
+  color: white;
+}
+
 
     .hero-right {
       flex: 1;
@@ -594,6 +680,11 @@
   margin-top: 20px;
 }
 
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
 .dropdown-btn {
   background-color: #fff;
   color: #333;
@@ -606,21 +697,36 @@
 .dropdown-menu {
   display: none;
   position: absolute;
+  margin-top: -1px;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
   background-color: #fff;
   padding: 10px;
   border: 1px solid #ddd;
   width: 200px;
   max-height: 300px;
   overflow-y: auto;
+
+  list-style: none;
+  margin: 0;
 }
 
 .dropdown-menu li {
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 
 .dropdown-menu a {
   color: #333;
   text-decoration: none;
+  display: block;
+  padding: 6px 10px;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.dropdown-menu a:hover {
+  background-color: #f0f0f0;
 }
 
 .dropdown-btn:hover + .dropdown-menu {
@@ -629,27 +735,52 @@
 
 .dropdown-menu:hover {
   display: block;
+
 }
+
+.dropdown:hover .dropdown-btn {
+  background-color: orange;
+  color: white;
+  border-radius: 4px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+
+/* .dropdown-menu.show {
+  display: block;
+} */
+
   </style>
 </head>
 <body>
 
   <!-- Top Bar -->
-  <div class="top-bar">
-    <a href="#">TELEHEALTH</a>
-    <a href="#">REQUEST EVALUATION</a>
-    <a href="#">EDMUND ADEM, PMHNP-BC</a>
-    <a href="#">AREA OF SERVICE</a>
-    <a href="#">BOOK AN APPOINTMENT</a>
-    <a href="#" class="pay">Make a Payment</a>
+  <div class="top-bar" id="top-bar">
+    <a href="https://care.headway.co/providers/edmund-adem?utm_source=pem&utm_medium=direct_link&utm_campaign=129389#intro">TELEHEALTH</a>
+    <a href="https://care.headway.co/providers/edmund-adem?utm_source=pem&utm_medium=direct_link&utm_campaign=129389">REQUEST EVALUATION</a>
+    <a href="https://care.headway.co/providers/edmund-adem?utm_source=pem&utm_medium=direct_link&utm_campaign=129389#more">EDMUND ADEM, PMHNP-BC</a>
+    <a href="#" onclick="showServiceAlert()">AREA OF SERVICE</a>
+    <a href="https://care.headway.co/providers/edmund-adem?utm_source=pem&utm_medium=direct_link&utm_campaign=129389">BOOK AN APPOINTMENT</a>
+    <a href="https://care.headway.co/providers/edmund-adem?utm_source=pem&utm_medium=direct_link&utm_campaign=129389#style" class="pay">Make a Payment</a>
   </div>
 
   <!-- Navigation -->
   <header class="site-header">
     <div class="logo" style="font-size: 40px">ADAMFOPA<br> <span>PSYCHIATRY, LLP</span></div>
-    <nav>
 
-      <button class="dropdown-btn">Conditions & Treatments</button>
+    <div class="mobile-top-bar-pills">
+      <a href="https://care.headway.co/providers/edmund-adem?utm_source=pem&utm_medium=direct_link&utm_campaign=129389#intro">TELEHEALTH</a>
+      <a href="https://care.headway.co/providers/edmund-adem?utm_source=pem&utm_medium=direct_link&utm_campaign=129389">REQUEST EVALUATION</a>
+      <a href="https://care.headway.co/providers/edmund-adem?utm_source=pem&utm_medium=direct_link&utm_campaign=129389#more">EDMUND ADEM, PMHNP-BC</a>
+      <a href="#" onclick="showServiceAlert()">AREA OF SERVICE</a>
+      <a href="https://care.headway.co/providers/edmund-adem?utm_source=pem&utm_medium=direct_link&utm_campaign=129389">BOOK AN APPOINTMENT</a>
+      <a href="https://care.headway.co/providers/edmund-adem?utm_source=pem&utm_medium=direct_link&utm_campaign=129389#style" class="pay">Make a Payment</a>
+    </div>
+    
+    <button class="hamburger">&#9776;</button>
+    <nav>
+      <div class="dropdown">
+      <button class="dropdown-btn" id="conditions-and-treatments">Conditions & Treatments</button>
       <ul class="dropdown-menu">
         <li><a href="#depression">Depression</a></li>
         <li><a href="#adhd">ADHD</a></li>
@@ -664,47 +795,44 @@
         <li><a href="#mood-disorder">Mood Disorder</a></li>
         <li><a href="#ocd">OCD</a></li>
       </ul>
-      <button class="dropdown-btn">Patients</button>
+      </div>
+
+      <div class="dropdown">
+      <button class="dropdown-btn" id="patients">Patients</button>
       <ul class="dropdown-menu">
-        <li><a href="#health-insurance">Health Insurance</a></li>
-        <li><a href="#payment">Make a Payment</a></li>
-        <li><a href="#appointment">Appointment</a></li>
+        <li><a href="https://care.headway.co/providers/edmund-adem?utm_source=pem&utm_medium=direct_link&utm_campaign=129389#cost">Health Insurance</a></li>
+        <li><a href="https://care.headway.co/providers/edmund-adem?utm_source=pem&utm_medium=direct_link&utm_campaign=129389#style">Make a Payment</a></li>
+        <li><a href="https://care.headway.co/providers/edmund-adem?utm_source=pem&utm_medium=direct_link&utm_campaign=129389">Appointment</a></li>
       </ul>
+      </div>
+
+      <div class="dropdown">
       <button class="dropdown-btn">Contact Us</button>
       <ul class="dropdown-menu">
-        <li><a href="#phone">(978) 684-3935</a></li>
-        <li><a href="#email">adamfopapsychiatry@gmail.com</a></li>
+        <li><a href="tel:9786843935">Phone</a></li>
+        <li><a href="mailto:adamfopapsychiatry@gmail.com" onclick="alert('To send us an email, please make sure your Gmail or email app is set up. You can also email us at adamfopapsychiatry@gmail.com')">
+          Email
+        </a>
+        </li>
       </ul>
+      
+      </div>
     </nav>
+    
   </div>
-  <script>
-    document.querySelectorAll('.dropdown-btn').forEach(function(btn) {
-      btn.addEventListener('click', function(e) {
-        const allMenus = document.querySelectorAll('.dropdown-menu');
-        allMenus.forEach(menu => menu.classList.remove('show'));
-        const nextMenu = this.nextElementSibling;
-        if (nextMenu && nextMenu.classList.contains('dropdown-menu')) {
-          nextMenu.classList.toggle('show');
-        }
-        e.stopPropagation();
-      });
-    });
-    document.addEventListener('click', () => {
-      document.querySelectorAll('.dropdown-menu').forEach(menu => menu.classList.remove('show'));
-    });
-  </script>
+  
 
   </header>
 
   <!-- Hero Section -->
- <section class="hero-image-crop">
-  <img src='images/design3.jpg' alt="Design Image">
-</section>
-
+  <section class="hero-image-crop">
+    <img src='images/design3.jpg' alt="Design Image">
+  </section>
+  
   <section class="hero-bold">
       <div class="hero-buttons">
-        <a href="#" class="btn-orange">BOOK AN APPOINTMENT</a>
-        <a href="#" class="btn-orange">CALL US! 978–648–3935</a>
+        <a href="https://care.headway.co/providers/edmund-adem?utm_source=pem&utm_medium=direct_link&utm_campaign=129389" class="btn-orange">BOOK AN APPOINTMENT</a>
+        <a href="tel:9786843935" class="btn-white">CALL US! 978–648–3935</a>
       </div>
   </section>
 
@@ -726,7 +854,7 @@
       </div>
       <div class="form-right">
         <p class="form-call">Please complete the form or call <a href="tel:9782520873">(978) 684-3935</a> to begin your confidential evaluation.</p>
-        <form>
+        <form action="https://formspree.io/f/mzzgydak" method="POST">
           <label>First and Last Name *</label>
           <input type="text" required>
           <label>Email *</label>
@@ -741,18 +869,16 @@
           </div>
           <label>Zip Code *</label>
           <input type="text" required>
-          <label>SMS Consent</label>
-          <div class="checkbox-group">
-            <label><input type="checkbox"> By checking this box, you consent to receive messages...</label>
-          </div>
-          <label><input type="checkbox" required> I agree to the HIPAA FORMS Service Privacy Statement</label>
+        
+            <label>Message</label>
+            <input type="text" name="message" placeholder="Tell us how we can help..." required>
           <button type="submit" class="submit-btn">🔒 Submit</button>
         </form>
       </div>
     </section>
 
     <!-- Team Section -->
-    <section class="team-section">
+    <section class="team-section" id="team">
       <div class="team-left">
         <img src='images/real.jpeg' alt="Team photo">
         <div class="team-buttons">
@@ -770,7 +896,7 @@
       </div>
     </section>
 
-    <section class="conditions-section">
+    <section class="conditions-section" id="article">
       <h2>Mental Health Conditions and Treatments</h2>
       <p class="intro">
         Taking the first step can seem difficult, but our caring and experienced team is ready to assist you getting the help you're looking for so that you can improve the quality of your life.
@@ -781,97 +907,97 @@
     
       <div class="card-container">
         <!-- ADD/ADHD -->
-        <div class="condition-card">
+        <div class="condition-card" id="adhd">
           <h3>ADD / ADHD</h3>
           <img src='images/ADHD.png' alt="ADD / ADHD">
           <p>
             Put an end to your inability to focus, complete tasks, or frequent restlessness. ADD and ADHD are treatable conditions with monitored care.
           </p>
-          <a href="#" class="card-link">ADD / ADHD SYMPTOMS AND TREATMENT</a>
+          <a href="https://care.headway.co/providers/edmund-adem?utm_source=pem&utm_medium=direct_link&utm_campaign=129389" class="card-link">ADD / ADHD SYMPTOMS AND TREATMENT</a>
         </div>
     
         <!-- Anxiety -->
-        <div class="condition-card">
+        <div class="condition-card" id="anxiety">
           <h3>Anxiety</h3>
           <img src='images/Anxiety.png' alt="Anxiety">
           <p>
             Anxiety can interfere with work, relationships, and daily life. If symptoms persist, Novum Psychiatry can help you manage and regain control.
           </p>
-          <a href="#" class="card-link">ANXIETY SYMPTOMS AND TREATMENT</a>
+          <a href="https://care.headway.co/providers/edmund-adem?utm_source=pem&utm_medium=direct_link&utm_campaign=129389" class="card-link">ANXIETY SYMPTOMS AND TREATMENT</a>
         </div>
     
         <!-- Bipolar -->
-        <div class="condition-card">
+        <div class="condition-card" id="bipolar-disorder">
           <h3>Bipolar Disorder</h3>
           <img src='images/bipolar.png' alt="Bipolar Disorder">
           <p>
             Bipolar disorder causes shifts in mood and energy. It can be effectively managed with medication and therapy.
           </p>
-          <a href="#" class="card-link">BIPOLAR DISORDER SYMPTOMS AND TREATMENT</a>
+          <a href="https://care.headway.co/providers/edmund-adem?utm_source=pem&utm_medium=direct_link&utm_campaign=129389" class="card-link">BIPOLAR DISORDER SYMPTOMS AND TREATMENT</a>
         </div>
       </div>
     
       <div class="card-container">
         <!-- Depression -->
-        <div class="condition-card">
+        <div class="condition-card" id="depression">
           <h3>Depression</h3>
           <img src='images/depression.png' alt="Depression">
           <p style = "font-size: 18px"> 
             Depression can cause feelings of sadness, isolation, and hopelessness. It can be effectively managed with medication and therapy.
           </p>
-          <a href="#" class="card-link">DEPRESSION SYMPTOMS AND TREATMENT</a>
+          <a href="https://care.headway.co/providers/edmund-adem?utm_source=pem&utm_medium=direct_link&utm_campaign=129389" class="card-link">DEPRESSION SYMPTOMS AND TREATMENT</a>
         </div>
   
         <!-- OCD -->
-        <div class="condition-card">
+        <div class="condition-card" id="ocd">
           <h3>OCD</h3>
           <img src='images/OCD.png' alt="OCD">
           <p>
             Obsessive-compulsive disorder is a mental disorder that causes obsessive thoughts and behaviors. It can be effectively managed with medication and therapy.
           </p>
-          <a href="#" class="card-link">OCD SYMPTOMS AND TREATMENT</a>
+          <a href="https://care.headway.co/providers/edmund-adem?utm_source=pem&utm_medium=direct_link&utm_campaign=129389" class="card-link">OCD SYMPTOMS AND TREATMENT</a>
         </div>
     
         <!-- PTSD -->
-        <div class="condition-card">
+        <div class="condition-card" id="trauma-and-ptsd">
           <h3>PTSD</h3>
           <img src='images/PTSD.png' alt="PTSD">
           <p>
             Post-traumatic stress disorder is a mental disorder that can occur after experiencing a traumatic experience. It can be effectively managed with medication and therapy.
           </p>
-          <a href="#" class="card-link">PTSD SYMPTOMS AND TREATMENT</a>
+          <a href="https://care.headway.co/providers/edmund-adem?utm_source=pem&utm_medium=direct_link&utm_campaign=129389" class="card-link">PTSD SYMPTOMS AND TREATMENT</a>
         </div>
       </div>
     
       <div class="card-container">
         <!-- Panic Disorder -->
-        <div class="condition-card">
+        <div class="condition-card" id="trauma-and-ptsd">
           <h3>Panic Disorder</h3>
           <img src='images/panic.png' alt="Panic Disorder">
           <p>
             Panic disorder is a mental disorder that causes excessive anxiety and fear. It can be effectively managed with medication and therapy.
           </p>
-          <a href="#" class="card-link">PANIC DISORDER SYMPTOMS AND TREATMENT</a>
+          <a href="https://care.headway.co/providers/edmund-adem?utm_source=pem&utm_medium=direct_link&utm_campaign=129389" class="card-link">PANIC DISORDER SYMPTOMS AND TREATMENT</a>
         </div> 
     
         <!-- Social Phobia -->
-        <div class="condition-card">
-          <h3>Social Phobia</h3>
-          <img src='images/social.png' alt="Social Phobia">
+        <div class="condition-card" id="mood-disorder">
+          <h3>Mood Disorder</h3>
+          <img src='images/social.png' alt="mood">
           <p>
-            Social phobia is a mental disorder that causes fear and avoidance of social situations. It can be effectively managed with medication and therapy.
+            Mood disorders can cause feelings of sadness, isolation, and hopelessness. It can be effectively managed with medication and therapy.
           </p>
-          <a href="#" class="card-link">SOCIAL PHOBIA SYMPTOMS AND TREATMENT</a>
+          <a href="https://care.headway.co/providers/edmund-adem?utm_source=pem&utm_medium=direct_link&utm_campaign=129389" class="card-link">SOCIAL PHOBIA SYMPTOMS AND TREATMENT</a>
         </div>
 
         <!-- Bipolar -->
-        <div class="condition-card">
+        <div class="condition-card" id="bipolar-disorder">
           <h3>Trauma</h3>
           <img src='images/Trauma.png' alt="PTSD">
           <p>
             Trauma can cause feelings of sadness, isolation, and hopelessness. It can be effectively managed with medication and therapy.
           </p>
-          <a href="#" class="card-link">TRAUMA SYMPTOMS AND TREATMENT</a>
+          <a href="https://care.headway.co/providers/edmund-adem?utm_source=pem&utm_medium=direct_link&utm_campaign=129389" class="card-link">TRAUMA SYMPTOMS AND TREATMENT</a>
         </div>
       </div>
 
@@ -891,29 +1017,90 @@
       <div class="footer-column links">
         <h4>Quick Links</h4>
         <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Conditions + Treatments</a></li>
-          <li><a href="#">Providers</a></li>
-          <li><a href="#">Patients</a></li>
-          <li><a href="#">Articles + Resources</a></li>
+          <li><a href="#top-bar">Home</a></li>
+          <li><a href="#article">Conditions + Treatments</a></li>
+          <li><a href="#team">Providers</a></li>
+          <li><a href="#patients">Patients</a></li>
+          <li><a href="#article">Articles + Resources</a></li>
         </ul>
       </div>
   
       <div class="footer-column contact">
         <h4>Contact Us</h4>
-        <p>Phone: 978-648-3935</p>
+        <p>
+          Phone:
+          <a href="tel:9786483935">
+            978-648-3935
+          </a>
+        </p>
         <p>
           Email:
-          <a href="mailto:info@adamfopapsychiatry.com">
+          <a href="mailtoadamfopapsychiatry@gmail.com">
             adamfopapsychiatry@gmail.com
           </a>
         </p>
-        <p>Address: 47 Bufton Farm Rd, Clinton, MA 01925</p>
       </div>
     </div>
     <div class="footer-bottom">
       <p>&copy; 2025 Adamfopa Psychiatry. All rights reserved.</p>
     </div>
   </footer>
+
+  <script>
+    const hamburger = document.querySelector('.hamburger');
+    const nav = document.querySelector('nav');
+  
+    hamburger.addEventListener('click', () => {
+      nav.classList.toggle('show');
+    });
+  
+    // Toggle dropdowns on click (for mobile)
+    document.querySelectorAll('.dropdown-btn').forEach((btn) => {
+      btn.addEventListener('click', (e) => {
+        const menu = btn.nextElementSibling;
+        document.querySelectorAll('.dropdown-menu').forEach(m => {
+          if (m !== menu) m.style.display = 'none';
+        });
+        menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+        e.stopPropagation();
+      });
+    });
+  
+    // Close menus if you click outside
+  hamburger.addEventListener('click', () => {
+  nav.classList.toggle('show');
+  document.querySelectorAll('.dropdown-menu').forEach(m => m.style.display = 'none');
+});
+
+    // Show service alert
+    function showServiceAlert() {
+      const box = document.createElement('div');
+      box.innerHTML = `
+        <strong>📍 Area of Service</strong><br>
+        We work in Worcester County and its environs.<br>
+        📞 Call us: <a href="tel:9786843935">978-684-3935</a><br>
+        ✉️ Email: <a href="mailto:adamfopapsychiatry@gmail.com">adamfopapsychiatry@gmail.com</a>
+      `;
+      Object.assign(box.style, {
+        background: '#fff3cd',
+        border: '1px solid #ffeeba',
+        color: '#856404',
+        padding: '15px',
+        borderRadius: '8px',
+        position: 'fixed',
+        top: '20px',
+        right: '20px',
+        maxWidth: '300px',
+        fontSize: '14px',
+        boxShadow: '0 4px 10px rgba(0,0,0,0.1)',
+        zIndex: 9999
+      });
+      document.body.appendChild(box);
+      setTimeout(() => box.remove(), 7000); // disappears after 7 seconds
+    }
+  </script>
+  
+  
+  
 </body>
 </html>
