@@ -7,147 +7,142 @@
   <style>
   /* Ensure images scale on small devices */
   img {
-    max-width: 100%;
-    height: auto;
-  }
+      max-width: 100%;
+      height: auto;
+    }
 
-  /* Responsive typography */
-  body, p, h1, h2, h3, h4, h5, h6 {
-    word-wrap: break-word;
-  }
+    body, p, h1, h2, h3, h4, h5, h6 {
+      word-wrap: break-word;
+    }
 
+    .hamburger {
+      display: none;
+    }
 
+    .mobile-top-bar-pills {
+      display: none;
+    }
 
-.hamburger {
-  display: none;
-}
+    @media (max-width: 768px) {
+      .site-header,
+      .hero-bold,
+      .form-section,
+      .team-section,
+      .card-container,
+      .footer-container {
+        flex-direction: column;
+        padding: 20px 15px !important;
+        align-items: center;
+      }
 
-.mobile-top-bar-pills {
-  display: none;
-}
+      .mobile-top-bar-pills {
+        overflow-x: auto;
+        white-space: nowrap;
+        padding: 10px;
+        background-color: #fff8f0;
+        display: flex;
+        gap: 10px;
+        justify-content: flex-start;
+        scroll-behavior: smooth;
+      }
 
-  /* Make layout elements stack on small screens */
-  @media (max-width: 768px) {
-  .site-header,
-  .hero-bold,
-  .form-section,
-  .team-section,
-  .card-container,
-  .footer-container {
-    flex-direction: column;
-    padding: 20px 15px !important;
-    align-items: center;
-  }
+      .mobile-top-bar-pills::-webkit-scrollbar {
+        height: 4px;
+      }
 
-  .mobile-top-bar-pills {
-    overflow-x: auto;
-    white-space: nowrap;
-    padding: 10px;
-    background-color: #fff8f0;
-    display: flex;
-    gap: 10px;
-    justify-content: flex-start;
-    scroll-behavior: smooth;
-  }
+      .mobile-top-bar-pills::-webkit-scrollbar-thumb {
+        background: orange;
+        border-radius: 10px;
+      }
 
-  .mobile-top-bar-pills::-webkit-scrollbar {
-    height: 4px;
-  }
+      .mobile-top-bar-pills a {
+        display: inline-block;
+        background: orange;
+        color: white;
+        font-weight: bold;
+        text-decoration: none;
+        padding: 8px 16px;
+        border-radius: 50px;
+        font-size: 14px;
+        white-space: nowrap;
+        transition: all 0.3s ease;
+      }
 
-  .mobile-top-bar-pills::-webkit-scrollbar-thumb {
-    background: orange;
-    border-radius: 10px;
-  }
+      .mobile-top-bar-pills a:hover {
+        background: white;
+        color: orange;
+        border: 1px solid orange;
+      }
 
-  .mobile-top-bar-pills a {
-    display: inline-block;
-    background: orange;
-    color: white;
-    font-weight: bold;
-    text-decoration: none;
-    padding: 8px 16px;
-    border-radius: 50px;
-    font-size: 14px;
-    white-space: nowrap;
-    transition: all 0.3s ease;
-  }
+      .mobile-top-bar-pills a span {
+        margin-right: 5px;
+      }
 
-  .mobile-top-bar-pills a:hover {
-    background: white;
-    color: orange;
-    border: 1px solid orange;
-  }
+      nav {
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        background-color: #fff;
+        padding: 15px;
+        gap: 10px;
+        transition: all 0.3s ease;
+      }
 
-  .mobile-top-bar-pills a span {
-    margin-right: 5px;
-  }
+      nav.show {
+        display: flex;
+      }
 
+      .hamburger {
+        display: block;
+        font-size: 28px;
+        background: none;
+        border: none;
+        color: #333;
+        padding: 10px;
+        margin-left: auto;
+        cursor: pointer;
+      }
 
+      .dropdown {
+        width: 100%;
+      }
 
+      .dropdown-btn {
+        width: 100%;
+        text-align: left;
+      }
 
+      .dropdown-menu {
+        position: static;
+        width: 100%;
+        max-height: none;
+        box-shadow: none;
+        border: none;
+        display: none;
+        padding-left: 0;
+      }
 
-  nav {
-    display: none;
-    flex-direction: column;
-    align-items: flex-start;
-    width: 100%;
-    background-color: #fff;
-    padding: 15px;
-    gap: 10px;
-    transition: all 0.3s ease;
+      .dropdown:hover .dropdown-menu {
+        display: block;
+      }
 
-  }
+      .top-bar {
+        display: none !important;
+      }
 
-  nav.show {
-    display: flex;
-  }
+      section.hero-image-crop img {
+        width: 100vw;
+        height: 300px;
+        object-fit: cover;
+        object-position: top center;
+        display: block;
+      }
 
-  .hamburger {
-    display: block;
-    font-size: 28px;
-    background: none;
-    border: none;
-    color: #333;
-    padding: 10px;
-    margin-left: auto;
-    cursor: pointer;
-  }
-
-  .dropdown {
-    width: 100%;
-  }
-
-  .dropdown-btn {
-    width: 100%;
-    text-align: left;
-  }
-
-  .dropdown-menu {
-    position: static;
-    width: 100%;
-    max-height: none;
-    box-shadow: none;
-    border: none;
-    display: none;
-    padding-left: 0;
-  }
-
-  .dropdown:hover .dropdown-menu {
-    display: block;
-  }
-
-  .top-bar {
-    display: none !important;
-  }
-
-  section.hero-image-crop img {
-    width: 100vw;
-    height: 300px;
-    object-fit: cover;
-    object-position: top center;
-    display: block;
-  }
-}
+      .hero-bold {
+        height: auto;
+      }
+    }
 
   /* Body and for the general layout */
     body {
