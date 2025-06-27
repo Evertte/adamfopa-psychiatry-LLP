@@ -46,6 +46,13 @@
         scroll-behavior: smooth;
       }
 
+    .button-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+      
       .mobile-top-bar-pills::-webkit-scrollbar {
         height: 4px;
       }
@@ -93,6 +100,15 @@
         display: flex;
       }
 
+      .book-appointment,
+      .call-us-btn {
+        font-size: 14px;
+        padding: 10px 20px;
+        width: 90%;
+        margin: 10px auto;
+        display: block;
+      }
+      
       .hamburger {
         display: block;
         font-size: 28px;
@@ -132,10 +148,9 @@
       }
 
       section.hero-image-crop img {
-        width: 100vw;
-        height: 300px;
-        object-fit: cover;
-        object-position: top center;
+        width: 100%;
+        height: auto;
+        max-height: 250px; 
         display: block;
       }
 
@@ -184,6 +199,10 @@
 
 
     .site-header {
+      width: 100%;
+      max-width: 100vw;
+      box-sizing: border-box;
+      overflow: hidden;
       background: #fff;
       padding: 10px 20px;
       display: flex;
@@ -741,9 +760,15 @@
 }
 
 
-/* .dropdown-menu.show {
-  display: block;
-} */
+* {
+  box-sizing: border-box;
+}
+html, body {
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
 
   </style>
 </head>
