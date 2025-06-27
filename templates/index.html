@@ -53,8 +53,8 @@
   }
     .hero-buttons a {
       flex: 0 1 auto;
-      padding: 25px 40px;
-      font-size: 18px;
+      padding: 24px 32px;
+      font-size: 16px;
     }
       .mobile-top-bar-pills::-webkit-scrollbar {
         height: 4px;
@@ -130,6 +130,7 @@
 
       .dropdown {
         width: 100%;
+        position: relative;
       }
 
       .dropdown-btn {
@@ -138,13 +139,16 @@
       }
 
       .dropdown-menu {
-        position: static;
+        position: absolute;
+        top: 100%;
+        left: 0;
         width: 100%;
-        max-height: none;
-        box-shadow: none;
-        border: none;
+        z-index: 9999;
+        background-color: white;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        border-radius: 6px;
+        padding: 10px 0;
         display: none;
-        padding-left: 0;
       }
 
       .dropdown:hover .dropdown-menu {
@@ -257,21 +261,19 @@
     }
 
   .hero-buttons {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    justify-content: center;
-    width: 100%;
-    max-width: 600px;
-    margin: auto;
-  }  
-
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 100%;
+}
 .hero-buttons a {
-  flex: 1 1 250px;
-  max-width: 100%;
+  flex: 1 1 140px;
+  padding: 12px 16px;
+  font-size: 14px;
   text-align: center;
-  padding: 14px 20px;
-  font-size: 16px;
 }
 
     .hero-left {
@@ -307,12 +309,6 @@
       margin-bottom: 30px;
       font-size: 15px;
       color: #e0e0e0;
-    }
-
-    .hero-buttons {
-      display: flex;
-      gap: 15px;
-      flex-wrap: wrap;
     }
 
     .btn-orange {
