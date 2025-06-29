@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Book Appointment - Adamfopa Medical</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+
+.site-footer {
+  background-color: #1B2A44;
+  padding: 40px 20px 20px;
+  font-family: Arial, sans-serif;
+  color: #f1f1f1;
+  border-top: 1px solid #333;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.footer-column {
+  flex: 1 1 250px;
+  min-width: 250px;
+}
+
+.footer-column h4 {
+  font-size: 18px;
+  margin-bottom: 15px;
+  color: #ffffff;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 10px;
+}
+
+.footer-column a {
+  text-decoration: none;
+  color: #7ab4ff;
+}
+
+.footer-column a:hover {
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 30px;
+  padding-top: 20px;
+  font-size: 14px;
+  color: #bbb;
+  border-top: 1px solid #333;
+}
+
+
+.copyright {
+  text-align: center;
+  font-size: 14px;
+  margin-top: 20px;
+}
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-900">
+
+  <!-- Hero -->
+  <section class="bg-blue-700 text-white py-12 px-4 text-center">
+    <h1 class="text-4xl font-bold mb-2">Welcome to Adamfopa Psychiatry, LLP</h1>
+    <p class="text-lg">For individuals without health insurance coverage</p>
+  </section>
+
+  <!-- Welcome Message -->
+<section class="max-w-3xl mx-auto text-center mt-10 px-4">
+    <h2 class="text-3xl font-bold mb-4 text-blue-800">Book Your Appointment Today</h2>
+    <p class="text-lg text-gray-700">
+      We are here to provide compassionate, professional mental health care. If you don't have insurance, you are still welcome here — just fill out the form below to request an appointment.
+    </p>
+  </section>  
+
+  <!-- Appointment Form -->
+  <section class="max-w-2xl mx-auto bg-white mt-10 p-6 rounded-xl shadow-md">
+    <h2 class="text-2xl font-semibold mb-4">Uninsured Patient Booking</h2>
+    <form action="https://formspree.io/f/movwrqyk" method="POST" class="space-y-4">
+      <input type="text" placeholder="Full Name" class="w-full border p-3 rounded" required>
+      <input type="email" placeholder="Email Address" class="w-full border p-3 rounded" required>
+      <input type="tel" placeholder="Phone Number" class="w-full border p-3 rounded" required>
+      <input type="date" class="w-full border p-3 rounded" required>
+      <label for="appointment-time" class="block text-sm font-medium text-gray-700">Preferred Time</label>
+      <input type="time" id="appointment-time" name="appointment-time" class="w-full border p-3 rounded" required>
+
+      <textarea placeholder="Reason for Visit" class="w-full border p-3 rounded" rows="3"></textarea>
+      <button type="submit" class="bg-blue-600 text-white px-6 py-3 rounded hover:bg-blue-700 transition">Book Appointment</button>
+    </form>
+  </section>
+
+
+<!-- Insurance Option Section -->
+<section class="max-w-2xl mx-auto bg-blue-50 border border-blue-200 mt-6 mb-16 p-6 rounded-xl text-center shadow-sm">
+    <h3 class="text-xl font-semibold text-blue-800 mb-2">Have Insurance?</h3>
+    <p class="text-gray-700 mb-4">
+      Patients with health insurance can book directly through our partner platform.
+    </p>
+    <a href="https://care.headway.co/providers/edmund-adem?utm_source=pem&utm_medium=direct_link&utm_campaign=129389"
+       class="inline-block bg-blue-600 text-white px-6 py-3 rounded hover:bg-blue-700 transition">
+      Book with Insurance
+    </a>
+  </section>
+  
+
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-column about">
+        <h4>About Us</h4>
+        <p>
+          Adamfopa Psychiatry is a private outpatient psychiatric practice
+          dedicated to providing comprehensive and compassionate care to
+          individuals and families.
+        </p>
+      </div>
+  
+      <div class="footer-column links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#top-bar">Home</a></li>
+          <li><a href="#article">Conditions + Treatments</a></li>
+          <li><a href="#team">Providers</a></li>
+          <li><a href="#patients">Patients</a></li>
+          <li><a href="#article">Articles + Resources</a></li>
+        </ul>
+      </div>
+  
+      <div class="footer-column contact">
+        <h4>Contact Us</h4>
+        <p>
+          Phone:
+          <a href="tel:9786483935">
+            978-648-3935
+          </a>
+        </p>
+        <p>
+          Email:
+          <a href="mailtoadamfopapsychiatry@gmail.com">
+            adamfopapsychiatry@gmail.com
+          </a>
+        </p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Adamfopa Psychiatry. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

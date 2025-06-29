@@ -35,27 +35,17 @@
         align-items: center;
       }
 
-  .mobile-top-bar-pills {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 10px;
-      padding: 10px;
-      background-color: #fff8f0;
-    }
+      .mobile-top-bar-pills {
+        overflow-x: auto;
+        white-space: nowrap;
+        padding: 10px;
+        background-color: #fff8f0;
+        display: flex;
+        gap: 10px;
+        justify-content: flex-start;
+        scroll-behavior: smooth;
+      }
 
-
-    .button-group {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-  }
-    .hero-buttons a {
-      flex: 0 1 auto;
-      padding: 24px 32px;
-      font-size: 16px;
-    }
       .mobile-top-bar-pills::-webkit-scrollbar {
         height: 4px;
       }
@@ -66,7 +56,7 @@
       }
 
       .mobile-top-bar-pills a {
-        display: block;
+        display: inline-block;
         background: orange;
         color: white;
         font-weight: bold;
@@ -74,14 +64,9 @@
         padding: 8px 16px;
         border-radius: 50px;
         font-size: 14px;
-        text-align: center;
-        flex: 1 1 auto;
-        min-width: 100px;
-        max-width: 160px;
-        white-space: normal;
+        white-space: nowrap;
         transition: all 0.3s ease;
       }
-
 
       .mobile-top-bar-pills a:hover {
         background: white;
@@ -108,15 +93,6 @@
         display: flex;
       }
 
-      .book-appointment,
-      .call-us-btn {
-        font-size: 14px;
-        padding: 10px 20px;
-        width: 90%;
-        margin: 10px auto;
-        display: block;
-      }
-      
       .hamburger {
         display: block;
         font-size: 28px;
@@ -130,7 +106,6 @@
 
       .dropdown {
         width: 100%;
-        position: relative;
       }
 
       .dropdown-btn {
@@ -139,16 +114,13 @@
       }
 
       .dropdown-menu {
-        position: absolute;
-        top: 100%;
-        left: 0;
+        position: static;
         width: 100%;
-        z-index: 9999;
-        background-color: white;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        border-radius: 6px;
-        padding: 10px 0;
+        max-height: none;
+        box-shadow: none;
+        border: none;
         display: none;
+        padding-left: 0;
       }
 
       .dropdown:hover .dropdown-menu {
@@ -160,23 +132,17 @@
       }
 
       section.hero-image-crop img {
-        width: 100%;
-        height: auto;
-        max-height: 250px; 
+        width: 100vw;
+        height: 300px;
+        object-fit: cover;
+        object-position: top center;
         display: block;
       }
-
-    .hero-image-crop {
-      position: relative;
-      z-index: 0;
-    }
-
 
       .hero-bold {
         height: auto;
       }
     }
-
   /* Body and for the general layout */
     body {
       font-family: Arial, sans-serif;
@@ -217,10 +183,6 @@
 
 
     .site-header {
-      width: 100%;
-      max-width: 100vw;
-      box-sizing: border-box;
-      overflow: hidden;
       background: #fff;
       padding: 10px 20px;
       display: flex;
@@ -241,12 +203,6 @@
       color: #00aaff;
       font-weight: bold;
     }
-   
-    nav {
-      position: relative;
-      z-index: 1000;
-    }
-
 
     nav a {
       margin: 0 10px;
@@ -262,8 +218,6 @@
 
     .hero-bold {
       background: linear-gradient(to right, #1B2A44, #1B2A44);
-      position: relative;
-      z-index: 1;
       color: white;
       display: flex;
       flex-wrap: wrap;
@@ -273,22 +227,6 @@
       justify-content: space-between;
       gap: 40px;
     }
-
-  .hero-buttons {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  width: 100%;
-}
-.hero-buttons a {
-  flex: 1 1 140px;
-  padding: 12px 16px;
-  font-size: 14px;
-  text-align: center;
-}
 
     .hero-left {
       flex: 1;
@@ -323,6 +261,12 @@
       margin-bottom: 30px;
       font-size: 15px;
       color: #e0e0e0;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
     }
 
     .btn-orange {
@@ -750,7 +694,7 @@
   margin-top: -1px;
   top: 100%;
   left: 0;
-  z-index: 9999;
+  z-index: 1000;
   background-color: #fff;
   padding: 10px;
   border: 1px solid #ddd;
@@ -796,15 +740,9 @@
 }
 
 
-* {
-  box-sizing: border-box;
-}
-html, body {
-  width: 100%;
-  max-width: 100vw;
-  overflow-x: hidden;
-}
-
+/* .dropdown-menu.show {
+  display: block;
+} */
 
   </style>
 </head>
@@ -814,10 +752,10 @@ html, body {
   <div class="top-bar" id="top-bar">
     <a href="https://care.headway.co/providers/edmund-adem?utm_source=pem&utm_medium=direct_link&utm_campaign=129389#intro">TELEHEALTH</a>
     <a href="https://care.headway.co/providers/edmund-adem?utm_source=pem&utm_medium=direct_link&utm_campaign=129389">REQUEST EVALUATION</a>
-    <a href="https://care.headway.co/providers/edmund-adem?utm_source=pem&utm_medium=direct_link&utm_campaign=129389#more">EDMUND ADEM, PMHNP-BC</a>
+    <a href="https://www.psychologytoday.com/us/psychiatrists/edmund-adem-clinton-ma/1508770">EDMUND ADEM, PMHNP-BC</a>
     <a href="#" onclick="showServiceAlert()">AREA OF SERVICE</a>
-    <a href="https://care.headway.co/providers/edmund-adem?utm_source=pem&utm_medium=direct_link&utm_campaign=129389">BOOK AN APPOINTMENT</a>
-    <a href="https://care.headway.co/providers/edmund-adem?utm_source=pem&utm_medium=direct_link&utm_campaign=129389#style" class="pay">Make a Payment</a>
+    <a href="appointment.html">APPOINTMENT</a>
+    <a href="payment.html" class="pay">Make a Payment</a>
   </div>
 
   <!-- Navigation -->
@@ -826,8 +764,11 @@ html, body {
 
     <div class="mobile-top-bar-pills">
       <a href="https://care.headway.co/providers/edmund-adem?utm_source=pem&utm_medium=direct_link&utm_campaign=129389#intro">TELEHEALTH</a>
+      <a href="https://care.headway.co/providers/edmund-adem?utm_source=pem&utm_medium=direct_link&utm_campaign=129389">REQUEST EVALUATION</a>
       <a href="https://care.headway.co/providers/edmund-adem?utm_source=pem&utm_medium=direct_link&utm_campaign=129389#more">EDMUND ADEM, PMHNP-BC</a>
-      <a href="https://care.headway.co/providers/edmund-adem?utm_source=pem&utm_medium=direct_link&utm_campaign=129389#style" class="pay">Make a Payment</a>
+      <a href="#" onclick="showServiceAlert()">AREA OF SERVICE</a>
+      <a href="appointment.html">BOOK AN APPOINTMENT</a>
+      <a href="payment.html" class="pay">Make a Payment</a>
     </div>
     
     <button class="hamburger">&#9776;</button>
@@ -853,9 +794,9 @@ html, body {
       <div class="dropdown">
       <button class="dropdown-btn" id="patients">Patients</button>
       <ul class="dropdown-menu">
-        <li><a href="https://care.headway.co/providers/edmund-adem?utm_source=pem&utm_medium=direct_link&utm_campaign=129389#style">Health Insurance</a></li>
-        <li><a href="https://care.headway.co/providers/edmund-adem?utm_source=pem&utm_medium=direct_link&utm_campaign=129389#style">Make a Payment</a></li>
-        <li><a href="https://care.headway.co/providers/edmund-adem?utm_source=pem&utm_medium=direct_link&utm_campaign=129389">Appointment</a></li>
+        <li><a href="https://care.headway.co/providers/edmund-adem?utm_source=pem&utm_medium=direct_link&utm_campaign=129389#cost">Health Insurance</a></li>
+        <li><a href="payment.html">Make a Payment</a></li>
+        <li><a href="appointment.html">Appointment</a></li>
       </ul>
       </div>
 
@@ -884,10 +825,31 @@ html, body {
   
   <section class="hero-bold">
       <div class="hero-buttons">
-        <a href="https://care.headway.co/providers/edmund-adem?utm_source=pem&utm_medium=direct_link&utm_campaign=129389" class="btn-orange">BOOK AN APPOINTMENT</a>
+        <a href="appointment.html" class="btn-orange">BOOK AN APPOINTMENT</a>
         <a href="tel:9786843935" class="btn-white">CALL US! 978–648–3935</a>
       </div>
   </section>
+
+  <!-- Trusted Partners / Featured On Section -->
+<section style="background: linear-gradient(to right, #eef2f3, #ffffff); padding: 60px 20px; text-align: center; box-shadow: inset 0 1px 6px rgba(0,0,0,0.05);">
+  <h2 style="font-size: 32px; font-weight: 700; color: #1B2A44; margin-bottom: 30px;">
+    Trusted & Featured On
+  </h2>
+
+  <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 50px; align-items: center; margin-bottom: 20px;">
+    <a href="https://www.psychologytoday.com/us/psychiatrists/edmund-adem-clinton-ma/1508770" target="_blank" style="transition: transform 0.3s ease;">
+      <img src="images/psychology-today-badge.png" alt="Psychology Today Approved" style="height: 70px; filter: grayscale(0); transition: filter 0.3s ease;">
+    </a>
+    <a href="https://care.headway.co/providers/edmund-adem?utm_source=pem&utm_medium=direct_link&utm_campaign=129389" target="_blank" style="transition: transform 0.3s ease;">
+      <img src="images/headway-badge.png" alt="Headway Approved" style="height: 70px; filter: grayscale(0); transition: filter 0.3s ease;">
+    </a>
+  </div>
+
+  <p style="font-size: 18px; color: #444; max-width: 600px; margin: 0 auto;">
+    Adamfopa Psychiatry, LLC is recognized by nationally respected directories for delivering ethical, high-quality mental health care.
+  </p>
+</section>
+
 
 
   <!-- Main Content -->
@@ -933,10 +895,10 @@ html, body {
     <!-- Team Section -->
     <section class="team-section" id="team">
       <div class="team-left">
-        <img src='images/real.jpeg' alt="Team photo">
+        <img src='images/team2.jpg' alt="Team photo">
         <div class="team-buttons">
-          <a href="#" class="btn-blue">OUR PSYCHIATRISTS</a>
-          <a href="#" class="btn-blueT">OUR THERAPISTS</a>
+          <a href="https://www.psychologytoday.com/us/psychiatrists/edmund-adem-clinton-ma/1508770" class="btn-blue">OUR PSYCHIATRISTS</a>
+          <a href="https://care.headway.co/providers/edmund-adem?utm_source=pem&utm_medium=direct_link&utm_campaign=129389" class="btn-blueT">OUR THERAPISTS</a>
         </div>
       </div>
       <div class="team-right">
@@ -1088,7 +1050,7 @@ html, body {
         </p>
         <p>
           Email:
-          <a href="mailto:adamfopapsychiatry@gmail.com" onclick="alert('To send us an email, please make sure your Gmail or email app is set up. You can also email us at adamfopapsychiatry@gmail.com')">
+          <a href="mailtoadamfopapsychiatry@gmail.com">
             adamfopapsychiatry@gmail.com
           </a>
         </p>
@@ -1102,6 +1064,10 @@ html, body {
   <script>
     const hamburger = document.querySelector('.hamburger');
     const nav = document.querySelector('nav');
+  
+    hamburger.addEventListener('click', () => {
+      nav.classList.toggle('show');
+    });
   
     // Toggle dropdowns on click (for mobile)
     document.querySelectorAll('.dropdown-btn').forEach((btn) => {
