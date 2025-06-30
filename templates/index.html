@@ -128,10 +128,25 @@
         display: block;
       }
 
-      .top-bar {
-        display: none !important;
-      }
+        .top-bar {
+    font-size: 12px;
+    padding: 6px;
+    gap: 6px;
+  }
 
+  .top-bar a {
+    padding: 4px 10px;
+    font-size: 12px;
+  }
+
+  .logo {
+    font-size: 22px;
+  }
+
+  body {
+    padding-top: 160px;
+  }
+}
       section.hero-image-crop img {
         width: 100%;
         height: auto;
@@ -156,66 +171,74 @@
 }
 
     }
-  /* Body and for the general layout */
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-    }
-
-    .top-bar {
-      background-color: orange;
-      color: white;
-      padding: 10px 15px;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 14px;
-    }
-
-    .top-bar a {
-      color: white;
-      margin-right: 15px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    .top-bar a.pay {
-      background-color: #d35400;
-      padding: 5px 10px;
-      border-radius: 3px;
-    }
-    .top-bar a:hover {
-  background-color: white;
-  color: orange;
-  padding: 5px 10px;
-  border-radius: 4px;
-  transition: all 0.3s ease;
+/* Body and for the general layout */
+/* Fix header on top */
+.fixed-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background: #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
+/* Responsive Top Bar */
+.top-bar {
+  background-color: orange;
+  color: white;
+  padding: 8px 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  font-size: 14px;
+}
 
-    .site-header {
-      background: #fff;
-      padding: 10px 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 1px solid #ddd;
-    }
+.top-bar a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 6px 12px;
+  border-radius: 20px;
+  background-color: #e67e22;
+  transition: 0.3s ease;
+  white-space: nowrap;
+}
 
-    .logo {
-      font-weight: bold;
-      color: #660066;
-      font-size: 30px;
-      text-shadow: 0 0 1px #000;
-      -webkit-text-stroke: 1px #000;
-    }
+.top-bar a:hover {
+  background: white;
+  color: orange;
+  border: 1px solid orange;
+}
 
-    .logo span {
-      color: #00aaff;
-      font-weight: bold;
-    }
+/* Logo Section */
+.site-header {
+  padding: 10px 20px;
+  text-align: center;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #ccc;
+}
+
+.logo {
+  font-weight: bold;
+  color: #660066;
+  font-size: 28px;
+  text-shadow: 0 0 1px #000;
+  -webkit-text-stroke: 0.5px #000;
+}
+
+.logo span {
+  color: #00aaff;
+  font-weight: bold;
+}
+
+/* Push content down to avoid hidden under fixed header */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding-top: 150px;
+}
 
     nav a {
       margin: 0 10px;
