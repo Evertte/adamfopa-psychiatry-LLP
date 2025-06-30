@@ -87,20 +87,25 @@
   </section>  
 
   <!-- Appointment Form -->
-  <section class="max-w-2xl mx-auto bg-white mt-10 p-6 rounded-xl shadow-md">
-    <h2 class="text-2xl font-semibold mb-4">Uninsured Patient Booking</h2>
-    <form action="https://formspree.io/f/movwrqyk" method="POST" class="space-y-4">
-      <input type="text" placeholder="Full Name" class="w-full border p-3 rounded" required>
-      <input type="email" placeholder="Email Address" class="w-full border p-3 rounded" required>
-      <input type="tel" placeholder="Phone Number" class="w-full border p-3 rounded" required>
-      <input type="date" class="w-full border p-3 rounded" required>
-      <label for="appointment-time" class="block text-sm font-medium text-gray-700">Preferred Time</label>
-      <input type="time" id="appointment-time" name="appointment-time" class="w-full border p-3 rounded" required>
+ <section class="max-w-2xl mx-auto bg-white mt-10 p-6 rounded-xl shadow-md">
+  <h2 class="text-2xl font-semibold mb-4">Uninsured Patient Booking</h2>
+  <form action="https://formspree.io/f/xwpbypjb" method="POST" class="space-y-4">
+    <input type="text" name="fullName" placeholder="Full Name" class="w-full border p-3 rounded" required>
 
-      <textarea placeholder="Reason for Visit" class="w-full border p-3 rounded" rows="3"></textarea>
-      <button type="submit" class="bg-blue-600 text-white px-6 py-3 rounded hover:bg-blue-700 transition">Book Appointment</button>
-    </form>
-  </section>
+    <input type="email" name="email" placeholder="Email Address" class="w-full border p-3 rounded" required>
+
+    <input type="tel" name="phone" placeholder="Phone Number" class="w-full border p-3 rounded" required>
+
+    <input type="date" name="preferredDate" class="w-full border p-3 rounded" required>
+
+    <label for="appointment-time" class="block text-sm font-medium text-gray-700">Preferred Time</label>
+    <input type="time" id="appointment-time" name="preferredTime" class="w-full border p-3 rounded" required>
+
+    <textarea name="reason" placeholder="Reason for Visit" class="w-full border p-3 rounded" rows="3"></textarea>
+
+    <button type="submit" class="bg-blue-600 text-white px-6 py-3 rounded hover:bg-blue-700 transition">Book Appointment</button>
+  </form>
+</section>
 
 
 <!-- Insurance Option Section -->
