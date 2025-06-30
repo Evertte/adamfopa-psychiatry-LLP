@@ -774,24 +774,24 @@
   <header class="site-header">
     <div class="logo" style="font-size: 40px">ADAMFOPA<br> <span>PSYCHIATRY, LLP</span></div>
 
-    <div class="mobile-top-bar-pills flex flex-wrap justify-center items-center gap-3 px-4 py-3 w-full max-w-full overflow-x-hidden text-sm text-center bg-gray-100">
+  <div class="mobile-top-bar-pills flex flex-wrap justify-center items-center gap-2 px-4 py-3 w-full max-w-full text-sm text-center">
   <a href="https://care.headway.co/providers/edmund-adem?utm_source=pem&utm_medium=direct_link&utm_campaign=129389#intro"
-     class="bg-blue-100 text-blue-800 px-4 py-2 rounded-full hover:bg-blue-200 transition">TELEHEALTH</a>
+     class="bg-orange-400 text-white px-3 py-2 rounded-full hover:bg-orange-500 transition">TELEHEALTH</a>
 
   <a href="https://care.headway.co/providers/edmund-adem?utm_source=pem&utm_medium=direct_link&utm_campaign=129389"
-     class="bg-blue-100 text-blue-800 px-4 py-2 rounded-full hover:bg-blue-200 transition">REQUEST EVALUATION</a>
+     class="bg-orange-400 text-white px-3 py-2 rounded-full hover:bg-orange-500 transition">REQUEST EVALUATION</a>
 
   <a href="https://care.headway.co/providers/edmund-adem?utm_source=pem&utm_medium=direct_link&utm_campaign=129389#more"
-     class="bg-blue-100 text-blue-800 px-4 py-2 rounded-full hover:bg-blue-200 transition">EDMUND ADEM, PMHNP-BC</a>
+     class="bg-orange-400 text-white px-3 py-2 rounded-full hover:bg-orange-500 transition">EDMUND ADEM, PMHNP-BC</a>
 
   <a href="#" onclick="showServiceAlert()"
-     class="bg-blue-100 text-blue-800 px-4 py-2 rounded-full hover:bg-blue-200 transition">AREA OF SERVICE</a>
+     class="bg-orange-400 text-white px-3 py-2 rounded-full hover:bg-orange-500 transition">AREA OF SERVICE</a>
 
   <a href="appointment.html"
-     class="bg-green-600 text-white px-4 py-2 rounded-full hover:bg-green-700 transition">BOOK AN APPOINTMENT</a>
+class="bg-orange-400 text-white px-3 py-2 rounded-full hover:bg-orange-500 transition">BOOK AN APPOINTMENT</a>
 
   <a href="payment.html"
-     class="bg-orange-500 text-white px-4 py-2 rounded-full hover:bg-orange-600 transition">Make a Payment</a>
+     class="bg-orange-400 text-white px-3 py-2 rounded-full hover:bg-orange-500 transition">Make a Payment</a>
 </div>
 
     
@@ -894,25 +894,31 @@
       <div class="form-right">
         <p class="form-call">Please complete the form or call <a href="tel:9782520873">(978) 684-3935</a> to begin your confidential evaluation.</p>
         <form action="https://formspree.io/f/mzzgydak" method="POST">
-          <label>First and Last Name *</label>
-          <input type="text" required>
-          <label>Email *</label>
-          <input type="email" required>
-          <label>Phone *</label>
-          <input type="tel" required>
-          <label>Preferred Office(s) *</label>
-          <div class="checkbox-group">
-            <label><input type="checkbox"> Leominster</label>
-            <label><input type="checkbox"> Clinton</label>
-            <label><input type="checkbox"> Telehealth (MA & NH)</label>
-          </div>
-          <label>Zip Code *</label>
-          <input type="text" required>
-        
-            <label>Message</label>
-            <input type="text" name="message" placeholder="Tell us how we can help..." required>
-          <button type="submit" class="submit-btn">🔒 Submit</button>
-        </form>
+  <label>First and Last Name *</label>
+  <input type="text" name="fullName" required>
+
+  <label>Email *</label>
+  <input type="email" name="email" required>
+
+  <label>Phone *</label>
+  <input type="tel" name="phone" required>
+
+  <label>Preferred Office(s) *</label>
+  <div class="checkbox-group">
+    <label><input type="checkbox" name="office" value="Leominster"> Leominster</label>
+    <label><input type="checkbox" name="office" value="Clinton"> Clinton</label>
+    <label><input type="checkbox" name="office" value="Telehealth (MA & NH)"> Telehealth (MA & NH)</label>
+  </div>
+
+  <label>Zip Code *</label>
+  <input type="text" name="zipcode" required>
+
+  <label>Message</label>
+  <input type="text" name="message" placeholder="Tell us how we can help..." required>
+
+  <button type="submit" class="submit-btn">🔒 Submit</button>
+</form>
+
       </div>
     </section>
 
@@ -1116,9 +1122,9 @@
       const box = document.createElement('div');
       box.innerHTML = `
         <strong>📍 Area of Service</strong><br>
-        We work in Worcester County and its environs.<br>
-        📞 Call us: <a href="tel:9786843935">978-684-3935</a><br>
-        ✉️ Email: <a href="mailto:adamfopapsychiatry@gmail.com">adamfopapsychiatry@gmail.com</a>
+          We work in Worcester County and its environs, and offer <strong>Telehealth services in Massachusetts</strong>.<br>
+          📞 Call us: <a href="tel:9786843935">978-684-3935</a><br>
+          ✉️ Email: <a href="mailto:adamfopapsychiatry@gmail.com">adamfopapsychiatry@gmail.com</a>
       `;
       Object.assign(box.style, {
         background: '#fff3cd',
