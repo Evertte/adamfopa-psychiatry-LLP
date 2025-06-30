@@ -774,25 +774,26 @@
   <header class="site-header">
     <div class="logo" style="font-size: 40px">ADAMFOPA<br> <span>PSYCHIATRY, LLP</span></div>
 
-  <div class="grid grid-cols-2 gap-2 px-4 py-3 text-xs sm:text-sm sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-6 max-w-xl mx-auto">
+  <div class="grid grid-cols-2 gap-3 px-4 py-4 text-xs sm:text-sm sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-6 max-w-xl mx-auto">
   <a href="https://care.headway.co/providers/edmund-adem?utm_source=pem&utm_medium=direct_link&utm_campaign=129389#intro"
-     class="bg-orange-400 text-white px-4 py-2 text-center rounded-full hover:bg-orange-500 transition break-words">TELEHEALTH</a>
+     class="bg-orange-400 text-white px-4 py-2 text-center rounded-full font-semibold hover:bg-orange-500 transition shadow-md border border-white break-words">TELEHEALTH</a>
 
   <a href="https://care.headway.co/providers/edmund-adem?utm_source=pem&utm_medium=direct_link&utm_campaign=129389"
-     class="bg-orange-400 text-white px-4 py-2 text-center rounded-full hover:bg-orange-500 transition break-words">REQUEST EVALUATION</a>
+     class="bg-orange-400 text-white px-4 py-2 text-center rounded-full font-semibold hover:bg-orange-500 transition shadow-md border border-white break-words">REQUEST EVALUATION</a>
 
   <a href="https://care.headway.co/providers/edmund-adem?utm_source=pem&utm_medium=direct_link&utm_campaign=129389#more"
-     class="bg-orange-400 text-white px-4 py-2 text-center rounded-full hover:bg-orange-500 transition break-words">EDMUND ADEM, PMHNP-BC</a>
+     class="bg-orange-400 text-white px-4 py-2 text-center rounded-full font-semibold hover:bg-orange-500 transition shadow-md border border-white break-words">EDMUND ADEM, PMHNP-BC</a>
 
   <a href="#" onclick="showServiceAlert()"
-     class="bg-orange-400 text-white px-4 py-2 text-center rounded-full hover:bg-orange-500 transition break-words">AREA OF SERVICE</a>
+     class="bg-orange-400 text-white px-4 py-2 text-center rounded-full font-semibold hover:bg-orange-500 transition shadow-md border border-white break-words">AREA OF SERVICE</a>
 
   <a href="appointment.html"
-     class="bg-orange-400 text-white px-4 py-2 text-center rounded-full hover:bg-orange-500 transition break-words">BOOK AN APPOINTMENT</a>
+     class="bg-orange-400 text-white px-4 py-2 text-center rounded-full font-semibold hover:bg-orange-500 transition shadow-md border border-white break-words">BOOK AN APPOINTMENT</a>
 
   <a href="payment.html"
-     class="bg-orange-400 text-white px-4 py-2 text-center rounded-full hover:bg-orange-500 transition break-words">MAKE A PAYMENT</a>
+     class="bg-orange-400 text-white px-4 py-2 text-center rounded-full font-semibold hover:bg-orange-500 transition shadow-md border border-white break-words">MAKE A PAYMENT</a>
 </div>
+
 
     
     <button class="hamburger">&#9776;</button>
@@ -880,7 +881,7 @@
   <main class="content">
     <h2>New Patients</h2>
     <p>
-      Welcome to Adamfopa Psychiatry! Following your phone evaluation, you will be provided with a password and asked to complete the following forms prior to your initial visit.
+      Welcome to Adamfopa Psychiatry! 
     </p>
 
     <!-- Evaluation Form -->
@@ -893,30 +894,31 @@
       </div>
       <div class="form-right">
         <p class="form-call">Please complete the form or call <a href="tel:9782520873">(978) 684-3935</a> to begin your confidential evaluation.</p>
-        <form action="https://formspree.io/f/mzzgydak" method="POST">
-  <label>First and Last Name *</label>
-  <input type="text" name="fullName" required>
-
-  <label>Email *</label>
-  <input type="email" name="email" required>
-
-  <label>Phone *</label>
-  <input type="tel" name="phone" required>
-
-  <label>Preferred Office(s) *</label>
-  <div class="checkbox-group">
-    <label><input type="checkbox" name="office" value="Leominster"> Leominster</label>
-    <label><input type="checkbox" name="office" value="Clinton"> Clinton</label>
-    <label><input type="checkbox" name="office" value="Telehealth (MA & NH)"> Telehealth (MA & NH)</label>
-  </div>
-
-  <label>Zip Code *</label>
-  <input type="text" name="zipcode" required>
-
-  <label>Message</label>
-  <input type="text" name="message" placeholder="Tell us how we can help..." required>
-
-  <button type="submit" class="submit-btn">🔒 Submit</button>
+  <form action="https://formspree.io/f/mwpbypdb" method="POST">
+    <label>First and Last Name *</label>
+    <input type="text" name="fullName" required>
+  
+    <label>Email *</label>
+    <input type="email" name="email" required>
+  
+    <label>Phone *</label>
+    <input type="tel" name="phone" required>
+  
+    <label>Preferred Office(s) *</label>
+    <div class="checkbox-group">
+      <label><input type="checkbox" name="office" value="Leominster"> Leominster</label>
+      <label><input type="checkbox" name="office" value="Clinton"> Clinton</label>
+      <label><input type="checkbox" name="office" value="Clinton"> Worcester</label>
+      <label><input type="checkbox" name="office" value="Telehealth (MA)"> Telehealth (MA)</label>
+    </div>
+  
+    <label>Zip Code *</label>
+    <input type="text" name="zipcode" required>
+  
+    <label>Message</label>
+    <input type="text" name="message" placeholder="Tell us how we can help..." required>
+  
+    <button type="submit" class="submit-btn">🔒 Submit</button>
 </form>
 
       </div>
