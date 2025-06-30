@@ -1145,6 +1145,13 @@
       document.body.appendChild(box);
       setTimeout(() => box.remove(), 7000); // disappears after 7 seconds
     }
+
+    const hamburger = document.getElementById('hamburger-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  hamburger.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+  });
   </script>
   
   
